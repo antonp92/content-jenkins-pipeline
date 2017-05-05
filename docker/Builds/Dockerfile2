@@ -1,0 +1,12 @@
+FROM debian:stable
+MAINTAINER antonp92 <test@test>
+
+RUN apt-get update && apt-get upgrade -y && apt-get install -y apache2 telnet elinks openssh-server
+
+ENV MYVALUE my-value
+
+EXPOSE 80
+EXPOSE 22
+
+CMD ["/usr/sbin/apache2ctl","-D", "FOREGROUND"]
+
