@@ -3,6 +3,9 @@
 FROM centos:latest
 MAINTAINER antonp92
 
-RUN echo "EXPORT 192.168.0.0/24" >> /etc/exports.list
 RUN useradd -ms /bin/bash user
+
+#The CMD command executes a command after the container runs
+CMD "echo" "This is a custom container message"
+
 USER user
